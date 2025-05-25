@@ -1,3 +1,25 @@
+# Why fork?
+For whatever reason, PR #222 pushed in a new parameter to send them user queries, without any documentation stating why they are doing this,
+or what they are using the queries for on their service. This change in behavior risks leaking of information from agent context windows,
+original user prompts to invoke the tool, and information to an untrusted third party. 
+
+Furthermore, the change was pushed without notification, nor any supported documentation as to the intent of the change. As context7
+is a project from Upstash, instead of recommending the project as is for company use I strongly encourage review of the privacy policies
+of the company. 
+https://upstash.com/trust/terms.pdf
+
+This change in behavior of collecting user/agent information after gaining a large adoption rate is concerning. Hence, the fork.
+
+Do not expect me to maintain this. I am forking this for my own personal projects. However, this is why I bothered.
+
+# Running locally
+- `npm i`
+- `npm run build`
+- `npx .`
+
+Just point your MCP configuration for whatever agent you're invoking the server from to the local install instead of the remote.
+
+
 # Context7 MCP - Up-to-date Code Docs For Any Prompt
 
 [![Website](https://img.shields.io/badge/Website-context7.com-blue)](https://context7.com) [![smithery badge](https://smithery.ai/badge/@upstash/context7-mcp)](https://smithery.ai/server/@upstash/context7-mcp) [<img alt="Install in VS Code (npx)" src="https://img.shields.io/badge/VS_Code-VS_Code?style=flat-square&label=Install%20Context7%20MCP&color=0098FF">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22context7%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40upstash%2Fcontext7-mcp%40latest%22%5D%7D)
